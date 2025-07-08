@@ -49,7 +49,7 @@ class gfMOD extends PolyMod {
 
     init = function(pml) {
         
-            anim = document.createElement("style")
+            this.anim = document.createElement("style")
             this.anim.textContent = `
             @keyframes fadeIn {
                 from { opacity: 0; }
