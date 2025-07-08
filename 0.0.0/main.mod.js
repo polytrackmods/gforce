@@ -134,7 +134,7 @@ class gfMOD extends PolyMod {
         `);
         pml.registerFuncMixin("pP", MixinType.INSERT, `yP(this, eP, "f").setColors(n.carColors),`, `ActivePolyModLoader.getMod("gforce").GFcar = yP(this, eP, "f"),`);
         pml.registerFuncMixin("polyInitFunction", MixinType.INSERT, `y.setAnimationLoop((function(e) {`, `ActivePolyModLoader.getMod("gforce").updateGFinfo();`);
-        pml.registerFuncMixin("$U", MixinType.INSERT, `),( () => {`, `
+        pml.registerFuncMixin("polyInitFunction", MixinType.INSERT, `),( () => {`, `
             ActivePolyModLoader.getMod("gforce").GFeffects.innerHTML = "";
             ActivePolyModLoader.getMod("gforce").GFeffects.style.background = "none";
             ActivePolyModLoader.getMod("gforce").killAll = false;
