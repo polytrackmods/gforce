@@ -7,8 +7,8 @@ class gfMOD extends PolyMod {
     GFtime = 0;
     GFlong = [];
     
-    const anim = document.createElement("style")
-    anim.textContent = `
+    anim = document.createElement("style")
+    this.anim.textContent = `
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
@@ -67,7 +67,7 @@ class gfMOD extends PolyMod {
       opacity: 0;
     }
     `
-    document.head.appendChild(anim);
+    document.head.appendChild(this.anim);
     
     GFinfo = document.createElement("p");
     document.getElementById("ui").appendChild(this.GFinfo);
