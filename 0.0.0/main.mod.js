@@ -6,6 +6,7 @@ class gfMOD extends PolyMod {
     GFspeed = 0;
     GFtime = 0;
     GFlong = [];
+    killAll = false;
     
     calculate = function() {
         if (!this.GFcar) return;
@@ -23,6 +24,7 @@ class gfMOD extends PolyMod {
     };
     
     updateGFinfo = function() {
+        if (this.killAll) return;
         if (this.GFlong[1] < -500) {
             this.GFeffects.style.background = "black";
     
@@ -128,12 +130,14 @@ class gfMOD extends PolyMod {
         pml.registerFuncMixin("uP", MixinType.INSERT, `{`, `
             ActivePolyModLoader.getMod("gforce").GFeffects.innerHTML = "";
             ActivePolyModLoader.getMod("gforce").GFeffects.style.background = "none";
+            ActivePolyModLoader.getMod("gforce").killAll = false;
         `);
         pml.registerFuncMixin("pP", MixinType.INSERT, `yP(this, eP, "f").setColors(n.carColors),`, `ActivePolyModLoader.getMod("gforce").GFcar = yP(this, eP, "f"),`);
         pml.registerFuncMixin("polyInitFunction", MixinType.INSERT, `y.setAnimationLoop((function(e) {`, `ActivePolyModLoader.getMod("gforce").updateGFinfo();`);
         pml.registerFuncMixin("$U", MixinType.INSERT, `),( () => {`, `
             ActivePolyModLoader.getMod("gforce").GFeffects.innerHTML = "";
             ActivePolyModLoader.getMod("gforce").GFeffects.style.background = "none";
+            ActivePolyModLoader.getMod("gforce").killAll = false;
         `);
     }
 }
