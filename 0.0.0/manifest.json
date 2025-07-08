@@ -1,0 +1,10 @@
+{
+    "polymod": {
+        "name": "G-Force",
+        "id": "gforce",
+        "author": "DoraChad",
+        "targets": ["0.5.0"],
+        "main": "main.mod.js"
+    },
+    "dependencies": []
+}
