@@ -86,7 +86,7 @@ class gfMOD extends PolyMod {
         document.body.insertBefore(this.GFeffects, document.body.firstChild);
 
         
-        calculate = function() {
+        this.calculate = function() {
             if (!this.GFcar) return;
             const localSpeed = KMHtoMPS(this.GFcar.getSpeedKmh());
             const localTime = this.GFcar.getTime().time;
@@ -97,11 +97,11 @@ class gfMOD extends PolyMod {
             this.GFlong[1] = Math.round(acceleration/9.82 * 100)/100;
         }
         
-        KMHtoMPS = function(input) {
+        this.KMHtoMPS = function(input) {
             return (input / 3.6)
         };
         
-        updateGFinfo = function() {
+        this.updateGFinfo = function() {
             if (this.killAll) return;
             if (this.GFlong[1] < -500) {
                 this.GFeffects.style.background = "black";
