@@ -88,7 +88,7 @@ class gfMOD extends PolyMod {
         
         this.calculate = function() {
             if (!this.GFcar) return;
-            const localSpeed = KMHtoMPS(this.GFcar.getSpeedKmh());
+            const localSpeed = this.KMHtoMPS(this.GFcar.getSpeedKmh());
             const localTime = this.GFcar.getTime().time;
             const acceleration = (localSpeed-this.GFspeed) / (localTime-this.GFtime);
             this.GFspeed = localSpeed;
@@ -121,7 +121,7 @@ class gfMOD extends PolyMod {
                 vignette.className = "vignette";
                 this.GFeffects.appendChild(vignette);
             }
-            calculate();
+            this.calculate();
             this.GFinfo.innerHTML = this.GFlong.join("<br>");
         };
 
