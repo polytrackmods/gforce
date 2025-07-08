@@ -111,14 +111,14 @@ class gfMOD extends PolyMod {
             `
             document.head.appendChild(this.anim);
             
-            GFinfo = document.createElement("p");
+            this.GFinfo = document.createElement("p");
             document.getElementById("ui").appendChild(this.GFinfo);
             this.GFinfo.style.position = "absolute";
             this.GFinfo.style.top = "0";
             this.GFinfo.style.right = "0";
             this.GFinfo.style.fontSize = "32px";
             
-            GFeffects = document.createElement("div");
+            this.GFeffects = document.createElement("div");
             this.GFeffects.style.width = "100vw";
             this.GFeffects.style.height = "100vh";
             this.GFeffects.style.position = "absolute";
